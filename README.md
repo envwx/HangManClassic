@@ -9,7 +9,7 @@
 ***
 
 ### ***Description***
-#### My First project ever to be done and it will be about the classic game: Hang Man!
+#### Hang Man is a word guessing game where if you guess the right words you win, but if you keep messing up and choose the wrong words, well, you lose!
 ***
 
 ### ***Technologies Used in my project***
@@ -19,7 +19,6 @@
 ***
 ### project brief
 
-# Hang Man is a word guessing game where if you guess the right words you win, but if you keep messing up and choose the wrong words, well, you lose!
 ***
 # Featuring in the game:
 * there's win and loss conditions!
