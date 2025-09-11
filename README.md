@@ -12,8 +12,29 @@
 #### My First project ever to be done and it will be about the classic game: Hang Man!
 ***
 
-### ***Technologies will be Used in my project***
+### ***Technologies Used in my project***
 * JAVASCRIPT
 * HTML
-  * CSS
+* CSS
 ***
+### project brief
+
+# Hang Man is a word guessing game where if you guess the right words you win, but if you keep messing up and choose the wrong words, well, you lose!
+***
+# Featuring in the game:
+* there's win and loss conditions!
+* a start up screen
+* Many words and guesses to choose from!
+* and at last we have a hang man to save!
+
+***
+## ***HomePage***
+
+##### image header 1
+![HomePage](/Images/HangManHP.png)
+
+##### image header 2
+![Game](/Images/HangManGanePage.png)
+***
+
+
