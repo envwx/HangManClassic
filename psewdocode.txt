@@ -1,0 +1,14 @@
+i'll be using HTML, CSS, JS to began with the project then i'll start adding more stuff in the project,
+
+
+the functions will be used there will be such as:
+
+IF.
+
+LOOPS.
+
+SWITCH.
+
+Event listeners
+
+(and more to be updated)
