@@ -1,14 +1,19 @@
 i'll be using HTML, CSS, JS to began with the project then i'll start adding more stuff in the project,
 
+adding:
 
-the functions will be used there will be such as:
+start game screen
 
-IF.
+reset button
 
-LOOPS.
+start button
 
-SWITCH.
+letters and words to guess
 
-Event listeners
+win and lose functions
 
-(and more to be updated)
+dynamic hang man for each wrong letter
+
+a game ending if reached a certain wrong guesses
+
+and more to be added
