@@ -33,7 +33,7 @@
 ![HomePage](/Images/starting.png)
 
 ##### image header 2
-![Game](/Images/mistake-6.png.png)
+![Game](/Images/mistake-6.png)
 ***
 
 
