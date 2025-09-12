@@ -30,10 +30,10 @@
 ## ***HomePage***
 
 ##### image header 1
-![HomePage](/Images/HangManHP.png)
+![HomePage](/Images/starting.png)
 
 ##### image header 2
-![Game](/Images/HangManGanePage.png)
+![Game](/Images//mistake-6.png.png)
 ***
 
 
