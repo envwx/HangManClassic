@@ -1,0 +1,29 @@
+button {
+  background-color: black;
+  height: 100px;
+  width: 120px;
+  font-size: 24px;
+  border-radius: 20px;
+}
+
+.start-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+}
+
+body {
+  text-align: center;
+}
+
+.background {
+  background-image: url('./Images/ClassicBK.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 150vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
