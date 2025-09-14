@@ -1,15 +1,19 @@
 //consts
 const letters = document.querySelectorAll('.letter')
 const wordUnderscores = document.querySelector('#word-underscores')
-const triesElement = document.querySelector('.tries')
+const triesElement = document.querySelector('.Tries')
 const image = document.querySelector('#hangman-img')
 const gameOverContainer = document.querySelector('#game-over')
 const gameWinContainer = document.querySelector('#game-win')
 const resetGame = document.querySelector('.reset')
 const hintText = document.querySelector('#hints')
 // for the word guesses and hints
-const word = ['windows', 'seeds']
-const hints = ['a house without it would be cold', 'birds favorite food']
+const word = ['windows', 'seeds', 'pc']
+const hints = [
+  'a house without it would be cold',
+  'birds favorite food',
+  'a device'
+]
 // variables
 let displayWord = []
 let selectedHint
@@ -20,9 +24,10 @@ let tries = 6
 let wordIndex = 0
 
 // game functions
-const init = () => {
+function init() {
   pickRandomWord()
   playGame()
+  showHint()
 }
 
 const playGame = () => {
@@ -34,7 +39,7 @@ const playGame = () => {
     pElement.textContent = '_'
     wordUnderscores.appendChild(pElement)
   }
-  tries.textContent = `tries: ${tries}`
+  triesElement.textContent = `tries: ${tries}`
 }
 
 const pickRandomWord = () => {
@@ -46,8 +51,8 @@ const showHint = () => {
   const hintIndex = word.findIndex(function (oneWord) {
     return oneWord === selectedWord
   })
-  selectedHint = hints
-  hintText.textContent = selectedHint
+  selectedHint = hintIndex
+  hintText.textContent = hints[hintIndex]
 }
 
 letters.forEach((oneLetter) => {
@@ -56,22 +61,24 @@ letters.forEach((oneLetter) => {
     if (selectedWord.includes(pickedLetter)) {
       showWord(pickedLetter)
     } else {
-      tries()
+      triesPoints()
     }
   })
 })
 
 const showUnderScores = () => {
-  for (let i = 0; i < word.length; i++) pElement = document.createElement('p')
-  pElement.textContent = '_'
-  wordUnderscores.appendChild(pElement)
+  wordUnderscores.innerHTML = ''
+  for (let i = 0; i < selectedWord.length; i++) {
+    let pElement = document.createElement('p')
+    pElement.textContent = '_'
+    wordUnderscores.appendChild(pElement)
+  }
 }
-
 const showWord = (pickedLetter) => {
-  wordUnderscores = ''
-  selectedWord.split('').forEach((letter, ix) => {
+  wordUnderscores.innerHTML = ''
+  selectedWord.split('').forEach((letter, idx) => {
     if (letter === pickedLetter) {
-      displayWord[ix] = letter
+      displayWord[idx] = letter
     }
   })
   displayWord.forEach((element) => {
@@ -79,9 +86,40 @@ const showWord = (pickedLetter) => {
     pElement.textContent = element
     wordUnderscores.appendChild(pElement)
   })
+  gameWin()
 }
 
-const resetGameBtn = () => {
+const triesPoints = () => {
+  tries -= 1
+
+  image.src = `Images/mistake-${tries}.png`
+  //
+  triesElement.textContent = `Remaining tries ${tries}`
+
+  gameOver()
+}
+
+const gameOver = () => {
+  if (tries == 0) {
+    let gameOverText = document.createElement('p')
+    gameOverText.textContent = 'Game are bing bong over!'
+    gameOverContainer.appendChild(gameOverText)
+    hintText.textContent = ''
+  }
+}
+
+const gameWin = () => {
+  let hasWon = displayWord.every((element) => {
+    return element !== '_'
+  })
+  if (hasWon) {
+    let gameWinText = document.createElement('p')
+    gameWinText.textContent = 'Noice'
+    gameWinContainer.appendChild(gameWinText)
+  }
+}
+
+const RestartGame = () => {
   tries = 6
   image.src = 'images/starting.png'
   selectedHint = ''
@@ -89,9 +127,12 @@ const resetGameBtn = () => {
   selectedWord = ''
   wrongLetter = []
   wordUnderscores.textContent = ''
-  gameWinContainer = ''
-  gameOverContainer = ''
+  gameWinContainer.innerHTML = ''
+  gameOverContainer.innerHTML = ''
+  pickRandomWord()
+  playGame()
+  showHint()
 }
 // event listeners
-resetGame.addEventListener('click', resetGame)
+resetGame.addEventListener('click', RestartGame)
 init()
