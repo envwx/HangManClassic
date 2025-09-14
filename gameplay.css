@@ -1,0 +1,34 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  padding: 0;
+  font-size: 20px;
+  background-color: bisque;
+}
+
+.letters,
+button {
+  margin: 0 auto 10pc auto;
+  padding: 10px;
+  font-size: larger;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+#reset {
+  margin-bottom: 30px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#word-underscores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+image {
+  align-self: center;
+}
