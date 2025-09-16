@@ -5,6 +5,7 @@ const triesElement = document.querySelector('.Tries')
 const image = document.querySelector('#hangman-img')
 const gameOverContainer = document.querySelector('#game-over')
 const gameWinContainer = document.querySelector('#game-win')
+//the brain
 const resetGame = document.querySelector('.reset')
 const hintText = document.querySelector('#hints')
 // for the words to guess
