@@ -9,12 +9,13 @@ const gameWinContainer = document.querySelector('#game-win')
 const resetGame = document.querySelector('.reset')
 const hintText = document.querySelector('#hints')
 // for the words to guess
-const word = ['windows', 'seeds', 'pc']
+const word = ['windows', 'seeds', 'laptop', 'spear']
 // the hints array
 const hints = [
   'a house without it would be cold',
   'birds favorite food',
-  'a device'
+  'a device to code',
+  'a old weapon people used to hunt animals with'
 ]
 //--------------------------------------variables--------------------------------
 //index of words that listed in the array
@@ -121,7 +122,7 @@ const triesPoints = () => {
 const gameOver = () => {
   if (tries == 0) {
     let gameOverText = document.createElement('p')
-    gameOverText.textContent = 'Game are bing bong over!'
+    gameOverText.textContent = 'You have used all of your tries, game over!'
     gameOverContainer.appendChild(gameOverText)
     hintText.textContent = ''
   }
@@ -133,7 +134,7 @@ const gameWin = () => {
   })
   if (hasWon) {
     let gameWinText = document.createElement('p')
-    gameWinText.textContent = 'Noice'
+    gameWinText.textContent = 'You won!'
     gameWinContainer.appendChild(gameWinText)
   }
 }
