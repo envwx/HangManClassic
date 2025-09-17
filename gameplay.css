@@ -4,11 +4,25 @@ body {
   font-family: sans-serif;
   background-color: bisque;
   text-align: center;
+  background-image: url('./Images/ClassicBK.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #title {
-  margin-top: 20px;
-  font-size: 36px;
+  margin-top: 90px;
+  font-size: 80px;
+  font-size: 22px;
+  color: aliceblue;
+  gap: 30px;
+  text-shadow: 0 0 6px #ff00cc;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .game-layout {
@@ -19,19 +33,16 @@ body {
 }
 
 #hangman-img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   width: 200px;
-}
-
-.center-side {
-  flex: 1;
-  text-align: center;
 }
 
 #hints {
   font-size: 18px;
   margin-bottom: 20px;
+  color: aliceblue;
+  text-shadow: 0 0 5px #ff00cc;
 }
 
 #word-underscores {
@@ -39,10 +50,11 @@ body {
   justify-content: center;
   gap: 10px;
   font-size: 24px;
+  color: azure;
+  text-shadow: 0 0 5px #ff00cc;
 }
 
 .keyboard .letters {
-  display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
@@ -51,9 +63,10 @@ body {
 .letter {
   padding: 10px;
   font-size: 18px;
-  border-radius: 40px;
+  border-radius: 100px;
   width: 40px;
   cursor: pointer;
+  text-shadow: 0 0 5px #ff00cc;
 }
 
 .reset {
@@ -69,4 +82,9 @@ body {
 
 .reset:hover {
   background-color: #e06666;
+}
+
+.Tries {
+  color: #ffff;
+  text-shadow: 0 0 5px #ff00cc;
 }

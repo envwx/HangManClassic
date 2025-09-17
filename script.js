@@ -40,7 +40,7 @@ function init() {
   playGame()
   showHint()
 }
-
+//----------------------------------------------------
 const playGame = () => {
   //to show the word that was listed in the array
   displayWord = []
@@ -55,12 +55,14 @@ const playGame = () => {
   //an html element to show the remaining tries on screen
   triesElement.textContent = `tries: ${tries}`
 }
-//so it can pick a random word from the words array
+//----------------------------------------------------
+//function to pick a random word from the words array
 const pickRandomWord = () => {
   wordIndex = Math.floor(Math.random() * word.length)
   selectedWord = word[wordIndex]
 }
-//this so it can pick a hint that matches with the word
+//-----------------------------------------------------
+//this function can pick a hint that matches with the word
 const showHint = () => {
   const hintIndex = word.findIndex(function (oneWord) {
     return oneWord === selectedWord
@@ -68,6 +70,7 @@ const showHint = () => {
   selectedHint = hintIndex
   hintText.textContent = hints[hintIndex]
 }
+//-----------------------------------------------------
 //to display the letters that guessed
 letters.forEach((oneLetter) => {
   oneLetter.addEventListener('click', (event) => {
@@ -80,6 +83,7 @@ letters.forEach((oneLetter) => {
     }
   })
 })
+//----------------------------------------------------
 //displays the underscores for the words
 const showUnderScores = () => {
   wordUnderscores.innerHTML = ''
@@ -92,6 +96,7 @@ const showUnderScores = () => {
     wordUnderscores.appendChild(pElement)
   }
 }
+//----------------------------------------------------
 //to show the right letter
 const showWord = (pickedLetter) => {
   //to replace the underscore with the right letter.
@@ -101,44 +106,57 @@ const showWord = (pickedLetter) => {
       displayWord[idx] = letter
     }
   })
+  //to shows the picked letter on screen
   displayWord.forEach((element) => {
+    //so we make a new p element
     let pElement = document.createElement('p')
+    //and fill with the picked letter
     pElement.textContent = element
     wordUnderscores.appendChild(pElement)
   })
   gameWin()
 }
-
+//----------------------------------------------------
+//if the picked letter is not in th word, it'll take a point from the tries
 const triesPoints = () => {
   tries -= 1
-
+  //to display the image when losing a life
   image.src = `Images/mistake-${tries}.png`
-  //
+  //and this one to show the remaining tries as you keep guessing wrong
   triesElement.textContent = `Remaining tries ${tries}`
 
   gameOver()
 }
-
+//----------------------------------------------------
 const gameOver = () => {
+  //once you run out of tries, a game over, i make an if statement
   if (tries == 0) {
+    //if tries = 0 it'll make a new paragraph element in HTML
     let gameOverText = document.createElement('p')
+    //so it can print a game over text
     gameOverText.textContent = 'You have used all of your tries, game over!'
+    //to show it on screen
     gameOverContainer.appendChild(gameOverText)
     hintText.textContent = ''
   }
 }
-
+//----------------------------------------------------
 const gameWin = () => {
+  //loops through all of the displayWord
+  //and check if all of the underscores are filled
   let hasWon = displayWord.every((element) => {
     return element !== '_'
   })
+  //if the condition above is fulfilled
   if (hasWon) {
+    //we make it do some DOM magic
     let gameWinText = document.createElement('p')
+    //to make that element say the you won word and displays it if you guess right
     gameWinText.textContent = 'You won!'
     gameWinContainer.appendChild(gameWinText)
   }
 }
-
+//----------------------------------------------------
 const RestartGame = () => {
   tries = 6
   image.src = 'images/starting.png'
@@ -156,3 +174,4 @@ const RestartGame = () => {
 // event listeners
 resetGame.addEventListener('click', RestartGame)
 init()
+//----------------------------------------------------
