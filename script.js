@@ -51,7 +51,7 @@ let displayWord = []
 
 //--------------------------------------game functions----------------------------
 //to call for the functions once the game starts
-function init() {
+const init = () => {
   pickRandomWord()
   playGame()
   showHint()

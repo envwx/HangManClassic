@@ -1,0 +1,59 @@
+const letters = to display the letters
+
+const wordUnderscores = to display the wordUnderscores
+
+const triesElement = to show the tries
+
+const image = to display the images
+
+const gameOverContainer = for the game over functions
+
+const gameWinContainer = for the game win function
+
+const resetGame = for the reset function
+
+const hintText = for the hint function
+
+const word = to contain the words to guess
+
+const hints = to contain the hints for the words to guess
+
+let wordIndex = 0
+
+let wrongLetter = []
+
+let selectedWord = ''
+
+let selectedHint
+
+let tries = 6
+
+let pickedLetter
+
+let displayWord = []
+
+const init: will add 3 consts in it so they call back
+
+const playGame: gonna add displayWord and more to make it functions
+
+const pickRandomWord: will make this a function and add a math floor so i can make it choose random words
+
+const showHint: this function will be to show hints and all
+
+letters.forEach: will include an event listener for each word is picked
+
+const showUnderScores: a function to show underscores and will work on a loop to display the underscores
+
+const showWord: this one will function so if any word is picked will replace the underscores
+
+const triesPoints: a function for the tries points and will be to decrease how many tries you have judging how mny wrong you have
+
+const gameOver: will be adding an if statement and create new element in it
+
+const gameWin: will be to loop thru the displayWord and check for the UnderScores if they are filled
+
+const RestartGame: a function will be to reset the game and put it back to the starting point
+
+add a reset game event listener
+
+init() so it connects with the const init() for and starts the game
