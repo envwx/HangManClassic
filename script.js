@@ -9,13 +9,29 @@ const gameWinContainer = document.querySelector('#game-win')
 const resetGame = document.querySelector('.reset')
 const hintText = document.querySelector('#hints')
 // for the words to guess
-const word = ['windows', 'seeds', 'laptop', 'spear']
+const word = [
+  'windows',
+  'seeds',
+  'laptop',
+  'spear',
+  'playstation',
+  'alarm',
+  'sans',
+  'keyboard',
+  'basketball',
+  'gameboy'
+]
 // the hints array
 const hints = [
   'a house without it would be cold',
   'birds favorite food',
   'a device to code',
-  'a old weapon people used to hunt animals with'
+  'a old weapon people used to hunt animals with',
+  'a gaming console',
+  'it annoys you, but helpful in the morning',
+  'a skeleton that wears a blue hoodie',
+  'clickable and makes noises and sometimes you need a mouse with it',
+  'a sport that needs to do some dunkin to score'
 ]
 //--------------------------------------variables--------------------------------
 //index of words that listed in the array
